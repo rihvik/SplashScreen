@@ -1,7 +1,9 @@
 import SwiftUI
 
 struct Screen3: View {
-    @State private var fadeIn = false
+    @State private var selectedIndicator = 0
+    
+    @State private var isActive = false
 
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -15,9 +17,9 @@ struct Screen3: View {
                         Image("scrn3")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 342.83636474609375, height: 476.8101806640625)
+                            .frame(width: 342.83636474609375, height: 406.8101806640625)
                             .clipped()
-                            .opacity(fadeIn ? 1.0 : 0.0) // Fade-in animation
+                            
                             .rotationEffect(Angle(degrees: -0.64))
                     )
                     .padding(.top, 150) // Adjust the padding to bring the image down
@@ -28,11 +30,10 @@ struct Screen3: View {
                     .font(Font.custom("Holtwood One SC", size: 24))
                     .foregroundColor(Constants.PrimaryTextColor)
                     .frame(width: 344, height: 193, alignment: .topLeading)
-                    .opacity(fadeIn ? 1.0 : 0.0) // Fade-in animation
-                    .offset(y: fadeIn ? 0 : -20) // Vertical animation
+                     
+                    .position(x:200,y:97)
 
                 Spacer()
-                
                 
             }
             .frame(width: 393, height: 952)
@@ -40,7 +41,7 @@ struct Screen3: View {
             .cornerRadius(20)
             .onAppear {
                 withAnimation(.easeInOut(duration: 1.0)) {
-                    fadeIn.toggle()
+                    
                 }
             }
 
@@ -50,25 +51,107 @@ struct Screen3: View {
                 .foregroundColor(.black)
                 .padding(.top, 100)
                 .padding(.trailing, 20)
+                .position(x:310,y:120)
+            
             
             VStack {
                 Spacer()
+                HStack {
+                    Spacer() // Center the indicators horizontally
+
+                    // Indicator 1
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 15, height: 15)
+                        .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+                        .cornerRadius(100)
+                        .onTapGesture {
+                            selectedIndicator = 0
+                        }
+                        .padding(.trailing, 5)
+
+                    // Indicator 2
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 15, height: 15)
+                        .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+                        .cornerRadius(100)
+                        .onTapGesture {
+                            selectedIndicator = 1
+                        }
+                        .padding(.trailing, 5)
+
+                    // Indicator 3
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 30, height: 15)
+                        .background(Color(red: 0.99, green: 0.44, blue: 0.44))
+                        .cornerRadius(100)
+                        .onTapGesture {
+                            selectedIndicator = 2
+                        }
+                        .padding(.trailing, 5)
+                    
+                    // Indicator 4
+                    Rectangle()
+                    .foregroundColor(.clear)
+                    .frame(width: 15, height: 15)
+                    .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+
+                    .cornerRadius(100)
+                    .onTapGesture {
+                            selectedIndicator = 3
+                        }
+                        .padding(.trailing, 5)
+                    
+                    Spacer() // Center the indicators horizontally
+                }  
+                .padding(.bottom, 90)
+                .position(x:195,y:750)
+
+                NavigationLink(destination: Screen4(), isActive: $isActive) {
+                    EmptyView()
+                }
+                .hidden()
+
                 Button(action: {
-                    // Handle button tap action
+                    isActive = true
                 }) {
                     Text("Next")
                         .foregroundColor(.black)
-                        .padding()
+                        .font(.system(size: 20, weight: .bold))
+                        .padding(.horizontal, 123)
+                        .padding(.vertical, 19)
                         .background(Color.white)
                         .cornerRadius(10)
-                        .frame(width: 300, height: 200)
-                        .position(CGPoint(x: 190.0, y: 830.0))
+                        .frame(width: 300, height: 50)
+                        Spacer()
                 }
+                .position(x:140,y:-100)
+                .padding()
+                .frame(width: 300, height: 100)
                 
                 
             }
+            
+            
         }
+        NavigationLink(destination: Screen4()) {
+            Text("Skip")
+                .foregroundColor(.blue)
+                .font(.system(size: 20, weight: .bold))
+                .lineLimit(nil)
+                .cornerRadius(10)
+                .frame(width: 300, height: 50)
+        }
+        .offset(x: 230, y: -30)
+        .padding()
+        .frame(width: 500, height: 100)
+        
+        
+        
     }
+    
 }
 
 struct Constants {
@@ -80,4 +163,5 @@ struct Screen3_Previews: PreviewProvider {
         Screen3()
     }
 }
+
 

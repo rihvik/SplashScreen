@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F06E1272B67F905007D2C8A /* DemoScreen1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F06E1262B67F905007D2C8A /* DemoScreen1.swift */; };
 		0F0F18172B6436CF003311EF /* SplashScreenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0F18162B6436CF003311EF /* SplashScreenApp.swift */; };
 		0F0F18192B6436CF003311EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0F18182B6436CF003311EF /* ContentView.swift */; };
 		0F0F181B2B6436D0003311EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F0F181A2B6436D0003311EF /* Assets.xcassets */; };
 		0F0F181E2B6436D0003311EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F0F181D2B6436D0003311EF /* Preview Assets.xcassets */; };
+		0F93F6042B68D04D0086B953 /* Screen4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F93F6032B68D04D0086B953 /* Screen4.swift */; };
+		0F93F60A2B68F6D20086B953 /* Demo2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F93F6092B68F6D20086B953 /* Demo2.swift */; };
 		0F94F4C02B65860400EB7C24 /* HoltwoodOneSC-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F94F4BF2B65860400EB7C24 /* HoltwoodOneSC-Regular.ttf */; };
 		0F94F4C22B658DC900EB7C24 /* Screen1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94F4C12B658DC900EB7C24 /* Screen1.swift */; };
 		0F9C52A82B668F7700D0E38F /* SFPRODISPLAYBOLD.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 0F9C52A72B668F7700D0E38F /* SFPRODISPLAYBOLD.OTF */; };
@@ -21,11 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F06E1262B67F905007D2C8A /* DemoScreen1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoScreen1.swift; sourceTree = "<group>"; };
 		0F0F18132B6436CF003311EF /* SplashScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplashScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F0F18162B6436CF003311EF /* SplashScreenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenApp.swift; sourceTree = "<group>"; };
 		0F0F18182B6436CF003311EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0F0F181A2B6436D0003311EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F0F181D2B6436D0003311EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0F93F6032B68D04D0086B953 /* Screen4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen4.swift; sourceTree = "<group>"; };
+		0F93F6092B68F6D20086B953 /* Demo2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo2.swift; sourceTree = "<group>"; };
 		0F94F4BF2B65860400EB7C24 /* HoltwoodOneSC-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HoltwoodOneSC-Regular.ttf"; sourceTree = "<group>"; };
 		0F94F4C12B658DC900EB7C24 /* Screen1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen1.swift; sourceTree = "<group>"; };
 		0F9C52A72B668F7700D0E38F /* SFPRODISPLAYBOLD.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYBOLD.OTF; sourceTree = "<group>"; };
@@ -71,8 +77,11 @@
 				0F0F18162B6436CF003311EF /* SplashScreenApp.swift */,
 				0FC57DC52B643868000639EA /* SplashScreenView.swift */,
 				0FDB27922B64FAF000BCC16B /* Screen3.swift */,
+				0F93F6032B68D04D0086B953 /* Screen4.swift */,
 				0FDB27942B65018500BCC16B /* Screen2.swift */,
 				0F94F4C12B658DC900EB7C24 /* Screen1.swift */,
+				0F06E1262B67F905007D2C8A /* DemoScreen1.swift */,
+				0F93F6092B68F6D20086B953 /* Demo2.swift */,
 				0F0F18182B6436CF003311EF /* ContentView.swift */,
 				0F0F181A2B6436D0003311EF /* Assets.xcassets */,
 				0F0F181C2B6436D0003311EF /* Preview Content */,
@@ -175,6 +184,9 @@
 				0FDB27952B65018500BCC16B /* Screen2.swift in Sources */,
 				0F0F18172B6436CF003311EF /* SplashScreenApp.swift in Sources */,
 				0F94F4C22B658DC900EB7C24 /* Screen1.swift in Sources */,
+				0F93F60A2B68F6D20086B953 /* Demo2.swift in Sources */,
+				0F93F6042B68D04D0086B953 /* Screen4.swift in Sources */,
+				0F06E1272B67F905007D2C8A /* DemoScreen1.swift in Sources */,
 				0FC57DC62B643868000639EA /* SplashScreenView.swift in Sources */,
 				0FDB27932B64FAF000BCC16B /* Screen3.swift in Sources */,
 			);

@@ -4,21 +4,37 @@
 //
 //  Created by user2 on 27/01/24.
 //
-
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showSplashScreen = true
+    
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            if showSplashScreen {
+                SplashScreenView()
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            withAnimation {
+                                showSplashScreen = false
+                            }
+                        }
+                    }
+            } else {
+                NavigationView {
+                    Screen1()
+                }
+            }
         }
-        .padding()
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
-#Preview {
-    ContentView()
+
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
