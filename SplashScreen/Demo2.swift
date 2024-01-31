@@ -19,7 +19,7 @@ struct Demo2: View {
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 342.83636474609375, height: 406.8101806640625)
                     .clipped()
-                    
+                    .position(x:250,y:350)
                     .rotationEffect(Angle(degrees: -0.64))
 
                 Text("BeatOven")
@@ -28,17 +28,18 @@ struct Demo2: View {
                     .padding()
                     .cornerRadius(10)
                     .padding(.top, 50)
-                    .position(CGPoint(x: 40.0, y: 80.0))
+                    .position(CGPoint(x: 240.0, y: 80.0))
                     .frame(width: 300)
 
-                Text("Find artists across the world to collaborate. ")
-                    .foregroundColor(.black)
-                    .font(Font.custom("SF Pro Display", size: 38).weight(.bold))
+                Text("Post Tracks and let\npeople find your profile")
+                    .font(Font.custom("Holtwood One SC", size: 24))
+                    .foregroundColor(Constants.PrimaryTextColor)
+                    .frame(width: 344, height: 193, alignment: .topLeading)
                     .padding()
                     .cornerRadius(10)
                     .padding(.bottom, 50)
                     .padding(.leading, 20)
-                    .position(CGPoint(x: 230.0, y: 610.0))
+                    .position(CGPoint(x: 230.0, y: 670.0))
 
                 VStack(spacing: 0) {
                     Spacer()
@@ -47,8 +48,8 @@ struct Demo2: View {
                         // Indicator 1
                         Rectangle()
                         .foregroundColor(.clear)
-                        .frame(width: 30, height: 15)
-                        .background(Color(red: 0.99, green: 0.44, blue: 0.44))
+                        .frame(width: 15, height: 15)
+                        .background(Color(red: 0.96, green: 0.96, blue: 0.96))
 
                         .cornerRadius(100)
                         .onTapGesture {
@@ -71,8 +72,8 @@ struct Demo2: View {
                         // Indicator 3
                         Rectangle()
                         .foregroundColor(.clear)
-                        .frame(width: 15, height: 15)
-                        .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+                        .frame(width: 30, height: 15)
+                        .background(Color(red: 0.99, green: 0.44, blue: 0.44))
 
                         .cornerRadius(100)
                         .onTapGesture {
@@ -95,7 +96,7 @@ struct Demo2: View {
                     .padding(.bottom, 25)
                     .position(x:250,y:685)
 
-                    NavigationLink(destination: Screen2()) {
+                    NavigationLink(destination: Screen4()) {
                         Text("Next")
                             .foregroundColor(.black)
                             .font(.system(size: 20, weight: .bold))
@@ -125,12 +126,16 @@ struct Demo2: View {
                 }
             }
             .edgesIgnoringSafeArea(.all)
-            .background(Color(red: 0.14, green: 0.15, blue: 0.19))
+            .background(Color(red: 0.99, green: 0.64, blue: 0.47))
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
         }
     }
     
+}
+
+struct Constants {
+    static let PrimaryTextColor: Color = Color(red: 0.14, green: 0.15, blue: 0.19)
 }
 
 

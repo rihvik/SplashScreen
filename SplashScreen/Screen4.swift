@@ -117,6 +117,7 @@ struct Screen4: View {
                 Button(action: {
                     // Handle button tap action
                 }) {
+                    
                     Text("Next")
                         .foregroundColor(.black)
                         .font(.system(size: 20, weight: .bold))
@@ -126,6 +127,7 @@ struct Screen4: View {
                         .cornerRadius(10)
                         .frame(width: 300, height: 50)
                 }
+                
                 .position(x:140,y:-70)
                 .padding()
                 .frame(width: 300, height: 100)

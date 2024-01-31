@@ -31,7 +31,7 @@ struct Screen2: View {
                 .cornerRadius(10)
                 .padding(.bottom, 50)
                 .padding(.leading, 20)
-                .position(CGPoint(x: 390.0, y: 670.0))
+                .position(CGPoint(x: 390.0, y: 660.0))
 
             VStack {
                 Spacer()

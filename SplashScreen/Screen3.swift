@@ -2,7 +2,6 @@ import SwiftUI
 
 struct Screen3: View {
     @State private var selectedIndicator = 0
-    
     @State private var isActive = false
 
     var body: some View {
@@ -12,108 +11,73 @@ struct Screen3: View {
 
                 Rectangle()
                     .foregroundColor(.clear)
-                    .frame(width: 342.83636, height: 376.81018)
+                    .frame(width: 342.83636, height: 416.81018)
                     .background(
                         Image("scrn3")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 342.83636474609375, height: 406.8101806640625)
                             .clipped()
-                            
                             .rotationEffect(Angle(degrees: -0.64))
                     )
-                    .padding(.top, 150) // Adjust the padding to bring the image down
+                    .padding(.top, 150)
 
                 Spacer()
 
                 Text("Post Tracks and let\npeople find your profile")
                     .font(Font.custom("Holtwood One SC", size: 24))
-                    .foregroundColor(Constants.PrimaryTextColor)
+                    .foregroundColor(.black)
                     .frame(width: 344, height: 193, alignment: .topLeading)
-                     
-                    .position(x:200,y:97)
+                    .position(x: 200, y: 67)
 
                 Spacer()
-                
             }
             .frame(width: 393, height: 952)
             .background(Color(red: 0.99, green: 0.64, blue: 0.47))
             .cornerRadius(20)
             .onAppear {
                 withAnimation(.easeInOut(duration: 1.0)) {
-                    
+                    // Add any animations or actions on view appear
                 }
             }
 
-            // Add "BeatOven" text at the top-right corner
             Text("BeatOven.")
                 .font(Font.custom("Condiment", size: 44))
                 .foregroundColor(.black)
                 .padding(.top, 100)
                 .padding(.trailing, 20)
-                .position(x:310,y:120)
-            
-            
+                .position(x: 310, y: 120)
+
             VStack {
                 Spacer()
+
                 HStack {
-                    Spacer() // Center the indicators horizontally
+                    Spacer()
 
-                    // Indicator 1
-                    Rectangle()
-                        .foregroundColor(.clear)
-                        .frame(width: 15, height: 15)
-                        .background(Color(red: 0.96, green: 0.96, blue: 0.96))
-                        .cornerRadius(100)
-                        .onTapGesture {
-                            selectedIndicator = 0
-                        }
-                        .padding(.trailing, 5)
+                    RectangleIndicator(selected: selectedIndicator == 1)
+                        .onTapGesture { selectedIndicator = 0 }
 
-                    // Indicator 2
-                    Rectangle()
-                        .foregroundColor(.clear)
-                        .frame(width: 15, height: 15)
-                        .background(Color(red: 0.96, green: 0.96, blue: 0.96))
-                        .cornerRadius(100)
-                        .onTapGesture {
-                            selectedIndicator = 1
-                        }
-                        .padding(.trailing, 5)
+                    RectangleIndicator(selected: selectedIndicator == 1)
+                        .onTapGesture { selectedIndicator = 1 }
 
-                    // Indicator 3
-                    Rectangle()
-                        .foregroundColor(.clear)
-                        .frame(width: 30, height: 15)
-                        .background(Color(red: 0.99, green: 0.44, blue: 0.44))
-                        .cornerRadius(100)
-                        .onTapGesture {
-                            selectedIndicator = 2
-                        }
-                        .padding(.trailing, 5)
-                    
-                    // Indicator 4
-                    Rectangle()
-                    .foregroundColor(.clear)
-                    .frame(width: 15, height: 15)
-                    .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+                    RectangleIndicator(selected: selectedIndicator == 0)
+                        .onTapGesture { selectedIndicator = 2 }
 
-                    .cornerRadius(100)
-                    .onTapGesture {
-                            selectedIndicator = 3
-                        }
-                        .padding(.trailing, 5)
-                    
-                    Spacer() // Center the indicators horizontally
-                }  
+                    RectangleIndicator(selected: selectedIndicator == 3)
+                        .onTapGesture { selectedIndicator = 3 }
+
+                    Spacer()
+                }
                 .padding(.bottom, 90)
-                .position(x:195,y:750)
+                .position(x: 195, y: 750)
 
                 NavigationLink(destination: Screen4(), isActive: $isActive) {
                     EmptyView()
                 }
                 .hidden()
 
+                // Buttons
+                // Next Button
                 Button(action: {
                     isActive = true
                 }) {
@@ -124,38 +88,30 @@ struct Screen3: View {
                         .padding(.vertical, 19)
                         .background(Color.white)
                         .cornerRadius(10)
-                        .frame(width: 300, height: 50)
-                        Spacer()
                 }
-                .position(x:140,y:-100)
                 .padding()
-                .frame(width: 300, height: 100)
-                
-                
-            }
-            
-            
-        }
-        NavigationLink(destination: Screen4()) {
-            Text("Skip")
-                .foregroundColor(.blue)
-                .font(.system(size: 20, weight: .bold))
-                .lineLimit(nil)
-                .cornerRadius(10)
-                .frame(width: 300, height: 50)
-        }
-        .offset(x: 230, y: -30)
-        .padding()
-        .frame(width: 500, height: 100)
-        
-        
-        
-    }
-    
-}
+                .position(x: 195, y: 450)
 
-struct Constants {
-    static let PrimaryTextColor: Color = Color(red: 0.14, green: 0.15, blue: 0.19)
+                // Skip Button
+                
+                Button(action: {
+                    isActive = true
+                    
+                }) {
+                    Text("Skip")
+                        .foregroundColor(.blue)
+                        .font(.system(size: 20, weight: .bold))
+                }
+                .padding()
+                .position(x: 195, y: 190)
+
+                NavigationLink(destination: Screen4(), isActive: $isActive) {
+                    EmptyView()
+                }
+                .hidden()
+            }
+        }
+    }
 }
 
 struct Screen3_Previews: PreviewProvider {
@@ -164,4 +120,14 @@ struct Screen3_Previews: PreviewProvider {
     }
 }
 
+struct RectangleIndicator: View {
+    var selected: Bool
 
+    var body: some View {
+        Rectangle()
+            .foregroundColor(selected ? Color(red: 0.99, green: 0.44, blue: 0.44) : Color(red: 0.96, green: 0.96, blue: 0.96))
+            .frame(width: selected ? 30 : 15, height: 15)
+            .cornerRadius(100)
+            .padding(.trailing, 5)
+    }
+}
